@@ -64,7 +64,7 @@ namespace PDFCleaner
                     var output = File.Open(dstFile, FileMode.Create);
          
                     pdfStamper = new PdfStamper(reader, output, reader.PdfVersion, false);
-
+                    pdfStamper.RotateContents = false;
             
                     var replaceTextProcessor = new TextReplaceStreamEditor(tbReplaceMatch.Text, tbReplaceReplace.Text);
                     if(cbReplaceText.Checked)
